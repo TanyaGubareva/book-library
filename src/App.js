@@ -1,6 +1,7 @@
 import { useState } from "react";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
+import Profile from './components/Profile';
 console.log("here");
 
 function App() {
@@ -31,8 +32,12 @@ function App() {
     setBooks(updatedBooks);
   };
   console.log("here");
+
+const name= 'Женя';
+   
   return (
     <div className="app">
+      <Profile name={name}/>
       <h1>Reading List</h1>
       <BookList onEdit={editBookById} books={books} onDelete={deleteBookById} />
       <BookCreate onCreate={createBook} />
